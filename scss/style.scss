@@ -1,0 +1,230 @@
+@charset "UTF-8"; 
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import "reset.scss"; 
+ 
+body{
+    background:#efefef; 
+}
+
+
+header{
+    width:400px; 
+    height:100%; 
+    position:fixed; 
+    top:0; 
+    left:0; 
+    background:linear-gradient(45deg, aqua, royalblue); 
+
+    h1{
+        font:bold 50px/1 'orbitron';
+        color:#fff; 
+        letter-spacing:1px;
+        position:absolute; 
+        top:50%; 
+        left:50px; 
+        transform:translateY(-150%); 
+
+        &::before{
+            content:'UI/UX DEVELOPMENT'; 
+            position:absolute; 
+            left:0;
+            top:140px; 
+            font:14px/1 'orbitron'; 
+            opacity:0.8;
+        }
+        &::after{
+            content:''; 
+            display:block; 
+            width:150px; 
+            height:2px; 
+            background:#fff; 
+            margin-top:20px; 
+        }
+    }
+
+
+    ul{
+        position:absolute; 
+        left:40px; 
+        bottom:100px; 
+
+        li{
+            float:left; 
+            margin-left:10px; 
+
+            a{
+                font-size:20px; 
+                color:#fff; 
+
+                span{
+                    display:inline-block; 
+                    transform:scale(0.7) translateX(-15px);
+                    opacity:0.7;
+                }
+            }
+        }
+    }
+}
+
+main{
+
+    margin-left:400px;  
+    padding:20px;  
+
+
+    ul{
+        width:100%; 
+        text-align:right; 
+        margin-bottom:10px; 
+       
+
+        li{
+            display:inline-block; 
+            margin-left:20px; 
+            width:100px; 
+            height:26px; 
+
+            a{
+                display:block; 
+                width:100%; height:100%; 
+                font:bold 7px/26px 'orbitron'; 
+                text-align:center; 
+                border-radius:4px; 
+                background:#fff; 
+                box-shadow:0 0 10px rgba(0,0,0,0.05); 
+            }
+
+            &.on a{
+                color:#fff; 
+                background:linear-gradient(45deg, aqua, royalblue); 
+                box-shadow:0 5px 20px rgb(162, 238, 238);
+            }
+        }
+    }
+
+    section{
+        width:100%; 
+
+        &::after{
+            content:''; display:block; clear:both; 
+        }
+
+        article{
+            width:20%; 
+            float:left; 
+            padding:12px; 
+
+            div{
+                width:100%; 
+                background:#fff; 
+                padding:14px; 
+                border-radius:4px; 
+                box-shadow:5px 5px 10px rgba(0,0,0,.1); 
+
+                img{
+                    width:100%; 
+                }
+                h2{
+                    font:bold 11px/1 'orbitron'; 
+                    color:#444; 
+                    letter-spacing:1px; 
+                    margin-top:15px; 
+                    margin-bottom:5px; 
+                }
+                p{
+                    font:10px/1.2 'arial'; 
+                    color:#777; 
+                    margin-bottom:15px; 
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1599px){
+    header{
+        width:350px;      
+    }
+    
+    main{    
+        margin-left:350px;  
+            
+        section{             
+            article{
+                width:25%;    
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1199px){
+    header{
+        width:100%;
+        height:80px;     
+        position:relative; 
+        
+        h1{
+            font-size:24px; 
+            transform:translateY(-50%); 
+
+            &::before, &::after{
+                display:none; 
+            }
+        }
+
+        ul{
+            left:auto; 
+            right:40px; 
+            bottom:25px; 
+
+            li a span{ display:none; }
+        }
+    }
+    
+    main{    
+        margin-left:0px;  
+            
+        section{             
+            article{
+                width:25%;    
+            }
+        }
+    }
+}
+
+@media screen and (max-width:899px){
+         
+    main{   
+        section{             
+            article{
+                width:33.333%;    
+            }
+        }
+    }
+}
+
+@media screen and (max-width:679px){
+    main{   
+        section{             
+            article{
+                width:50%;    
+            }
+        }
+    }
+}
+@media screen and (max-width:539px){
+    header ul { display:none; }
+    main{   
+        ul{
+            li{
+                margin-left:2%;
+                width:30%; 
+            }
+        }
+        section{             
+            article{
+                width:100%;    
+            }
+        }
+    }
+}
